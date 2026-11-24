@@ -551,6 +551,8 @@ h1{margin:0;font-size:2rem;letter-spacing:-.5px}
   border-radius:999px;padding:.45em .95em;cursor:pointer;text-decoration:none;display:inline-block}
 .refresh:active,.btn:active,.mini:active{border-color:var(--accent)}
 .mini{font-size:.78rem;padding:.3em .8em}
+.iconbtn{width:2.6rem;height:2.6rem;display:inline-flex;align-items:center;justify-content:center;flex:none;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:50%;text-decoration:none}
+.iconbtn:active,.iconbtn:hover{border-color:var(--accent);color:var(--accent)}
 .date{color:var(--muted);font:.875rem var(--ui);margin-top:4px}
 nav{position:sticky;top:0;background:var(--bg);padding:10px 0;margin:10px 0 0;border-bottom:1px solid var(--line);
     display:flex;gap:8px;flex-wrap:wrap;font:.875rem var(--ui)}
@@ -956,7 +958,15 @@ def render(sections, errors, info):
         f"<script>{PREFS_JS}</script>",
         "<style>", CSS, "</style></head><body>",
         "<header><div class='top'><h1>Daily News</h1>",
-        "<a class='refresh' href='#settings'>⚙ Settings</a></div>",
+        "<a class='iconbtn' href='#settings' aria-label='Settings' title='Settings'>",
+        "<svg viewBox='0 0 24 24' width='22' height='22' fill='none' stroke='currentColor' stroke-width='2' "
+        "stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='3'/>"
+        "<path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 "
+        "1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 "
+        "2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9 "
+        "1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 "
+        "2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9 "
+        "a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg></a></div>",
         f"<div class='date'>{now.strftime('%A %d %B %Y, %I:%M %p').replace(' 0', ' ')}</div></header>",
         "<main><nav>",
     ]
