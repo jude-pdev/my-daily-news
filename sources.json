@@ -1,4 +1,10 @@
 {
-  "added": [],
+  "added": [
+    {
+      "category": "Australia",
+      "name": "news.com.au",
+      "url": "https://www.news.com.au/"
+    }
+  ],
   "removed": []
 }
